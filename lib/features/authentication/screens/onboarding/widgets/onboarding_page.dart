@@ -20,11 +20,7 @@ class OnBoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(
-        right: USizes.defaultSpace,
-        left: USizes.defaultSpace,
-        top: UDeviceHelper.getAppBarHeight(),
-      ),
+      padding: EdgeInsets.only(top: UDeviceHelper.getAppBarHeight()),
       child: Column(
         children: [
           Lottie.asset(animation),
