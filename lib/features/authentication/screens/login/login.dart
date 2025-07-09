@@ -7,6 +7,7 @@ import 'package:ecom_app/features/authentication/screens/login/widgets/login_for
 import 'package:ecom_app/features/authentication/screens/login/widgets/login_header.dart';
 import 'package:ecom_app/features/authentication/screens/login/widgets/remember_me.dart';
 import 'package:ecom_app/features/authentication/screens/signup/signUp.dart';
+import 'package:ecom_app/navigation_menu.dart';
 import 'package:ecom_app/utils/constants/sizes.dart';
 import 'package:ecom_app/utils/constants/texts.dart';
 import 'package:ecom_app/utils/helpers/helper_function.dart';
@@ -54,7 +55,10 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: USizes.spaceBtwSections),
 
               ///------Sign In------///
-              UElevatedButton(onPressed: () {}, child: Text(UTexts.signIn)),
+              UElevatedButton(
+                onPressed: () => Get.to(() => NavigationMenu()),
+                child: Text(UTexts.signIn),
+              ),
 
               SizedBox(height: USizes.spaceBtwItems),
 
