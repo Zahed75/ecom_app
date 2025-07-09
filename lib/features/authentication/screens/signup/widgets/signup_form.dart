@@ -1,9 +1,12 @@
 import 'package:ecom_app/common/widgets/button/elevated_button.dart';
+import 'package:ecom_app/features/authentication/screens/signup/verify_email.dart';
 import 'package:ecom_app/utils/constants/colors.dart';
 import 'package:ecom_app/utils/constants/sizes.dart';
 import 'package:ecom_app/utils/constants/texts.dart';
 import 'package:ecom_app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:iconsax/iconsax.dart';
 
 class USignupForm extends StatelessWidget {
@@ -105,7 +108,10 @@ class USignupForm extends StatelessWidget {
         ),
         SizedBox(height: USizes.spaceBtwItems / 2),
 
-        UElevatedButton(onPressed: () {}, child: Text(UTexts.createAccount)),
+        UElevatedButton(
+          onPressed: () => Get.to(() => VerifyEmailScreen()),
+          child: Text(UTexts.createAccount),
+        ),
       ],
     );
   }

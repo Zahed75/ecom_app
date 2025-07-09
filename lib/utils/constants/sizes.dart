@@ -28,7 +28,7 @@ class USizes {
 
   // Default spacing between sections
   static const double defaultSpace = 24.0;
-  static const double spaceBtwItems = 70.0;
+  static const double spaceBtwItems = 16.0;
   static const double spaceBtwSections = 32.0;
 
   // Border radius
@@ -41,7 +41,7 @@ class USizes {
 
   // Input field
   static const double inputFieldRadius = 12.0;
-  static const double spaceBtwInputFields = 16.0;
+  static const double spaceBtwInputFields = 20.0;
 
   // Card sizes
   static const double cardRadiusLg = 16.0;

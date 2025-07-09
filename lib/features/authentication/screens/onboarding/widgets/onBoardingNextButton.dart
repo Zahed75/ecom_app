@@ -14,7 +14,7 @@ class OnBoardingNextButton extends StatelessWidget {
       left: 0,
       right: 0,
 
-      bottom: USizes.spaceBtwItems,
+      bottom: USizes.spaceBtwItems * 7,
       child: UElevatedButton(
         onPressed: controller.nextPage,
         child: Obx(

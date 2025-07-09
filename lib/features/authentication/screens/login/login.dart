@@ -56,7 +56,7 @@ class LoginScreen extends StatelessWidget {
               ///------Sign In------///
               UElevatedButton(onPressed: () {}, child: Text(UTexts.signIn)),
 
-              SizedBox(height: USizes.spaceBtwItems / 3),
+              SizedBox(height: USizes.spaceBtwItems),
 
               SizedBox(
                 width: double.infinity,
