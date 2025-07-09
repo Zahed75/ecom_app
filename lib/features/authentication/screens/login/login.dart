@@ -1,17 +1,14 @@
 import 'package:ecom_app/common/styles/padding.dart';
 import 'package:ecom_app/common/widgets/button/elevated_button.dart';
+import 'package:ecom_app/common/widgets/button/social_buttons.dart';
 import 'package:ecom_app/common/widgets/login_signup/form_divider.dart';
 import 'package:ecom_app/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:ecom_app/features/authentication/screens/login/widgets/login_header.dart';
 import 'package:ecom_app/features/authentication/screens/login/widgets/remember_me.dart';
-import 'package:ecom_app/features/authentication/screens/login/widgets/social_button.dart';
-import 'package:ecom_app/utils/constants/colors.dart';
-import 'package:ecom_app/utils/constants/images.dart';
 import 'package:ecom_app/utils/constants/sizes.dart';
 import 'package:ecom_app/utils/constants/texts.dart';
 import 'package:ecom_app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

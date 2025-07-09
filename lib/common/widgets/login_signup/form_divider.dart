@@ -1,5 +1,4 @@
 import 'package:ecom_app/utils/constants/colors.dart';
-import 'package:ecom_app/utils/constants/images.dart';
 import 'package:ecom_app/utils/constants/sizes.dart';
 import 'package:ecom_app/utils/constants/texts.dart';
 import 'package:flutter/material.dart';
