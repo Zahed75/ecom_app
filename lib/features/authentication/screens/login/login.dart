@@ -5,10 +5,13 @@ import 'package:ecom_app/common/widgets/login_signup/form_divider.dart';
 import 'package:ecom_app/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:ecom_app/features/authentication/screens/login/widgets/login_header.dart';
 import 'package:ecom_app/features/authentication/screens/login/widgets/remember_me.dart';
+import 'package:ecom_app/features/authentication/screens/signup/signUp.dart';
 import 'package:ecom_app/utils/constants/sizes.dart';
 import 'package:ecom_app/utils/constants/texts.dart';
 import 'package:ecom_app/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -57,7 +60,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => SignUpScreen()),
                   child: Text(UTexts.createAccount),
                 ),
               ),
