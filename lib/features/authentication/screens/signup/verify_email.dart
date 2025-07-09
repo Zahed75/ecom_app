@@ -54,7 +54,15 @@ class VerifyEmailScreen extends StatelessWidget {
               ),
               SizedBox(height: USizes.spaceBtwSections),
               UElevatedButton(
-                onPressed: () => Get.to(() => SuccessScreen()),
+                onPressed:
+                    () => Get.to(
+                      () => SuccessScreen(
+                        title: UTexts.accountCreatedTitle,
+                        subTitle: UTexts.accountCreatedSubTitle,
+                        image: UImages.accountCreatedImage,
+                        onTap: () {},
+                      ),
+                    ),
                 child: Text(UTexts.uContinue),
               ),
               SizedBox(
