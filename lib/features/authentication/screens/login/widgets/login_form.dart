@@ -22,7 +22,7 @@ class ULoginForm extends StatelessWidget {
         /// Password
         TextFormField(
           decoration: InputDecoration(
-            prefixIcon: Icon(Iconsax.direct_right),
+            prefixIcon: Icon(Iconsax.password_check),
             labelText: UTexts.password,
             suffixIcon: Icon(Iconsax.eye),
           ),

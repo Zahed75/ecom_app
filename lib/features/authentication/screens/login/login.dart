@@ -17,57 +17,63 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = UHelperFunctions.isDarkMode(context);
     return Scaffold(
-      body: Padding(
-        padding: UPadding.screenPadding,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            /// Title and Subtitle---///
-            ULoginHeader(),
-            SizedBox(height: USizes.spaceBtwSections),
+      appBar: AppBar(),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: UPadding.screenPadding,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              /// Title and Subtitle---///
+              ULoginHeader(),
+              SizedBox(height: USizes.spaceBtwSections),
 
-            /// [Sign In Forms]---///
-            ULoginForm(),
+              /// [Sign In Forms]---///
+              ULoginForm(),
 
-            SizedBox(height: USizes.spaceBtwInputFields / 2),
+              SizedBox(height: USizes.spaceBtwInputFields / 2),
 
-            /// Remember Me & Forgot Password
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                URememberMeCheckbox(),
+              /// Remember Me & Forgot Password
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  URememberMeCheckbox(),
 
-                /// ForgetPassword
-                TextButton(
+                  /// ForgetPassword
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(UTexts.forgetPassword),
+                  ),
+                ],
+              ),
+              SizedBox(height: USizes.spaceBtwSections),
+
+              ///------Sign In------///
+              UElevatedButton(onPressed: () {}, child: Text(UTexts.signIn)),
+
+              SizedBox(height: USizes.spaceBtwItems / 3),
+
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton(
                   onPressed: () {},
-                  child: Text(UTexts.forgetPassword),
+                  child: Text(UTexts.createAccount),
                 ),
-              ],
-            ),
-            SizedBox(height: USizes.spaceBtwSections),
+              ),
 
-            ///------Sign In------///
-            UElevatedButton(onPressed: () {}, child: Text(UTexts.signIn)),
+              SizedBox(height: USizes.spaceBtwSections),
 
-            SizedBox(height: USizes.spaceBtwItems / 3),
+              /// [Divider]---///
+              UFormDivider(dark: dark, title: UTexts.orSignInWith),
+              SizedBox(height: USizes.spaceBtwSections),
 
-            UElevatedButton(
-              onPressed: () {},
-              child: Text(UTexts.createAccount),
-            ),
+              ///-----Social Login------///
+              USocialButtons(),
 
-            SizedBox(height: USizes.spaceBtwSections),
-
-            /// [Divider]---///
-            UFormDivider(dark: dark, title: UTexts.orSignInWith),
-            SizedBox(height: USizes.spaceBtwSections),
-
-            ///-----Social Login------///
-            USocialButtons(),
-
-            /// [Footer]---///
-          ],
+              /// [Footer]---///
+            ],
+          ),
         ),
       ),
     );
