@@ -1,9 +1,5 @@
-import 'package:ecom_app/utils/constants/images.dart';
-import 'package:ecom_app/utils/constants/sizes.dart';
-import 'package:ecom_app/utils/constants/texts.dart';
 import 'package:ecom_app/utils/helpers/device_helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 class UElevatedButton extends StatelessWidget {
   const UElevatedButton({

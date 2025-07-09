@@ -1,11 +1,16 @@
 import 'package:ecom_app/common/widgets/button/elevated_button.dart';
+import 'package:ecom_app/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:ecom_app/features/authentication/screens/onboarding/widgets/onBoardingNextButton.dart';
+import 'package:ecom_app/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
 import 'package:ecom_app/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
+import 'package:ecom_app/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 import 'package:ecom_app/utils/constants/images.dart';
 import 'package:ecom_app/utils/constants/sizes.dart';
 import 'package:ecom_app/utils/constants/texts.dart';
 import 'package:ecom_app/utils/helpers/device_helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -13,13 +18,16 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OnBoardingController());
+
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: USizes.defaultSpace),
         child: Stack(
           children: [
-            /// OnBoarding Screen
             PageView(
+              controller: controller.pageController,
+              onPageChanged: controller.updatePageIndicator,
               children: [
                 OnBoardingPage(
                   animation: UImages.onboarding1Animation,
@@ -49,52 +57,6 @@ class OnboardingScreen extends StatelessWidget {
             OnBoardingSkipButton(),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class OnBoardingSkipButton extends StatelessWidget {
-  const OnBoardingSkipButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      top: UDeviceHelper.getAppBarHeight(),
-      right: 0,
-      child: TextButton(onPressed: () {}, child: Text("Skip")),
-    );
-  }
-}
-
-class OnBoardingNextButton extends StatelessWidget {
-  const OnBoardingNextButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      left: 0,
-      right: 0,
-
-      bottom: USizes.spaceBtwItems,
-      child: UElevatedButton(child: Text("Next"), onPressed: () {}),
-    );
-  }
-}
-
-class OnBoardingDotNavigation extends StatelessWidget {
-  const OnBoardingDotNavigation({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      bottom: UDeviceHelper.getBottomNavigationBarHeight() * 4,
-      left: UDeviceHelper.getScreenWidth(context) / 3,
-      right: UDeviceHelper.getScreenWidth(context) / 3,
-      child: SmoothPageIndicator(
-        controller: PageController(),
-        count: 3,
-        effect: ExpandingDotsEffect(dotHeight: 6.0),
       ),
     );
   }
