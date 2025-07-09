@@ -1,0 +1,38 @@
+import 'package:ecom_app/utils/constants/colors.dart';
+import 'package:ecom_app/utils/constants/images.dart';
+import 'package:ecom_app/utils/constants/sizes.dart';
+import 'package:ecom_app/utils/constants/texts.dart';
+import 'package:flutter/material.dart';
+
+class UFormDivider extends StatelessWidget {
+  const UFormDivider({super.key, required this.dark, required String title});
+
+  final bool dark;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: Divider(
+            indent: 50,
+            endIndent: 5,
+            thickness: 0.5,
+            color: dark ? UColors.darkGrey : UColors.grey,
+          ),
+        ),
+        Text(
+          UTexts.orSignInWith,
+          style: Theme.of(context).textTheme.labelMedium,
+        ),
+        Expanded(
+          child: Divider(
+            indent: 5,
+            endIndent: 60,
+            color: dark ? UColors.darkGrey : UColors.grey,
+          ),
+        ),
+      ],
+    );
+  }
+}
