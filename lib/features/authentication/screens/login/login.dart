@@ -2,6 +2,7 @@ import 'package:ecom_app/common/styles/padding.dart';
 import 'package:ecom_app/common/widgets/button/elevated_button.dart';
 import 'package:ecom_app/common/widgets/button/social_buttons.dart';
 import 'package:ecom_app/common/widgets/login_signup/form_divider.dart';
+import 'package:ecom_app/features/authentication/screens/forgot_password/forget_password.dart';
 import 'package:ecom_app/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:ecom_app/features/authentication/screens/login/widgets/login_header.dart';
 import 'package:ecom_app/features/authentication/screens/login/widgets/remember_me.dart';
@@ -45,7 +46,7 @@ class LoginScreen extends StatelessWidget {
 
                   /// ForgetPassword
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => ForgetPasswordScreen()),
                     child: Text(UTexts.forgetPassword),
                   ),
                 ],
